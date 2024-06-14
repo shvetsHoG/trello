@@ -1,0 +1,9 @@
+.input {
+    padding: 5px 5px;
+    border-radius: 4px;
+    border: 2px solid var(--soft-pink-color);
+    font-size: 22px;
+    font-family: 'Abel', sans-serif;
+    min-width: 300px;
+    max-width: 600px;
+}

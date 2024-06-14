@@ -4,6 +4,11 @@ import { IAuthForm } from '../../types/user.types.ts';
 import { authService } from '../../services/auth.service.ts';
 import { toast } from 'sonner';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import Input from '../../components/ui/input/Input.tsx';
+import Button from '../../components/ui/button/Button.tsx';
+import A from '../../components/ui/link/A.tsx';
+import classes from './AuthPage.module.css';
+import Span from '../../components/ui/span/Span.tsx';
 
 const enum LocationEnum {
     login = 'login',
@@ -41,17 +46,39 @@ const AuthPage = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input
-                    type='text'
-                    {...register('email')}
-                />
-                <input
-                    type='password'
-                    {...register('password')}
-                />
-                <button type={'submit'}>Вход</button>
+        <div className={classes.wrapper}>
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                className={classes.form}
+            >
+                <div className={classes.inputWrapper}>
+                    <Span>Email:</Span>
+                    <Input
+                        type='text'
+                        {...register('email')}
+                    />
+                    <Span>Password:</Span>
+                    <Input
+                        type='password'
+                        {...register('password')}
+                    />
+                </div>
+                <div className={classes.btnWrapper}>
+                    <Button>
+                        {location === LocationEnum.registration
+                            ? LocationEnum.registration
+                            : LocationEnum.login}
+                    </Button>
+                </div>
+                {location === LocationEnum.registration ? (
+                    <A path={`/${LocationEnum.login}`}>
+                        Already have an account? Login
+                    </A>
+                ) : (
+                    <A path={`/${LocationEnum.registration}`}>
+                        Do not have an account? Register
+                    </A>
+                )}
             </form>
         </div>
     );

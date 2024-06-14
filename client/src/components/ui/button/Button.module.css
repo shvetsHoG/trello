@@ -1,0 +1,19 @@
+.btn {
+    transition: 0.2s;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: 2px solid var(--dark-pink-color);
+    font-size: 26px;
+    font-family: 'Ubuntu Sans', sans-serif;
+    color: var(--soft-pink-color);
+    background: #fff;
+    max-width: 400px;
+}
+
+.btn:hover {
+    color: var(--darkest-pink-color);
+    background: var(--soft-pink-color);
+}
