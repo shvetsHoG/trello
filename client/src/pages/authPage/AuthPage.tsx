@@ -9,6 +9,8 @@ import Button from '../../components/ui/button/Button.tsx';
 import A from '../../components/ui/link/A.tsx';
 import classes from './AuthPage.module.css';
 import Span from '../../components/ui/span/Span.tsx';
+import { setAuth } from '../../store/reducers/AuthSlice.ts';
+import { useDispatch } from 'react-redux';
 
 const enum LocationEnum {
     login = 'login',
@@ -20,6 +22,7 @@ const AuthPage = () => {
     const location = locationParams.pathname.substring(1);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const { register, handleSubmit, reset } = useForm<IAuthForm>({
         mode: 'onChange'
@@ -36,6 +39,7 @@ const AuthPage = () => {
             ),
         onSuccess() {
             toast.success('Успешный вход в систему');
+            dispatch(setAuth(true));
             reset();
             navigate('/');
         }

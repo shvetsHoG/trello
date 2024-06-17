@@ -16,14 +16,19 @@ export class authService {
     }
 
     public static async getNewTokens() {
-        const response = await axiosClassic.post<IAuthResponse>(
-            '/auth/login/access-token'
-        );
+        try {
+            const response = await axiosClassic.post<IAuthResponse>(
+                '/auth/login/access-token'
+            );
 
-        if (response.data.accessToken)
-            saveTokenStorage(response.data.accessToken);
+            if (response.data.accessToken) {
+                saveTokenStorage(response.data.accessToken);
+            }
 
-        return response;
+            return response;
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     public static async logout() {
