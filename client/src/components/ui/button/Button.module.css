@@ -17,3 +17,36 @@
     color: var(--darkest-pink-color);
     background: var(--soft-pink-color);
 }
+
+.small {
+    padding: 5px 15px;
+    font-size: 26px;
+}
+
+.medium {
+    padding: 8px 20px;
+    font-size: 30px;
+}
+
+.large {
+    padding: 12px 25px;
+    font-size: 34px;
+}
+
+.black {
+    border: 2px solid black;
+    color: black;
+    background: #fff;
+}
+
+.default {
+    border: 2px solid var(--dark-pink-color);
+    color: var(--soft-pink-color);
+    background: #fff;
+}
+
+.filled {
+    border: 2px solid black;
+    color: var(--soft-pink-color);
+    background: var(--darkest-pink-color);
+}

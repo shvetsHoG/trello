@@ -1,11 +1,32 @@
 import classes from './Button.module.css';
 import { FC } from 'react';
+import classNames from 'classnames';
 interface ButtonProps {
     children?: string;
+    size?: string;
+    type?: string;
 }
 
-const Button: FC<ButtonProps> = ({ children }) => {
-    return <button className={classes.btn}>{children}</button>;
+const Button: FC<ButtonProps> = ({ children, size, type }) => {
+    return (
+        <button
+            className={classNames(
+                classes.btn,
+                {
+                    [classes.small]: size === 's',
+                    [classes.medium]: size === 'm',
+                    [classes.large]: size === 'l'
+                },
+                {
+                    [classes.black]: type === 'black',
+                    [classes.default]: type === 'default',
+                    [classes.filled]: type === 'filled'
+                }
+            )}
+        >
+            {children}
+        </button>
+    );
 };
 
 export default Button;

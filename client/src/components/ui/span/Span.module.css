@@ -2,3 +2,27 @@
     font-family: 'Ubuntu Sans', sans-serif;
     font-size: 20px;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.inherit {
+    font-weight: inherit;
+}
+
+.light {
+    font-weight: lighter;
+}
+
+.small {
+    font-size: 20px;
+}
+
+.medium {
+    font-size: 28px;
+}
+
+.large {
+    font-size: 36px;
+}

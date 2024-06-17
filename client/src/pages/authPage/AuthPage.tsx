@@ -56,30 +56,51 @@ const AuthPage = () => {
                 className={classes.form}
             >
                 <div className={classes.inputWrapper}>
-                    <Span>Email:</Span>
+                    <Span
+                        weight={'inherit'}
+                        size={'m'}
+                    >
+                        Email:
+                    </Span>
                     <Input
                         type='text'
+                        size={'m'}
                         {...register('email')}
                     />
-                    <Span>Password:</Span>
+                    <Span
+                        weight={'inherit'}
+                        size={'m'}
+                    >
+                        Password:
+                    </Span>
                     <Input
                         type='password'
+                        size={'m'}
                         {...register('password')}
                     />
                 </div>
                 <div className={classes.btnWrapper}>
-                    <Button>
+                    <Button
+                        size={'m'}
+                        type={'default'}
+                    >
                         {location === LocationEnum.registration
                             ? LocationEnum.registration
                             : LocationEnum.login}
                     </Button>
                 </div>
                 {location === LocationEnum.registration ? (
-                    <A path={`/${LocationEnum.login}`}>
+                    <A
+                        size={'m'}
+                        path={`/${LocationEnum.login}`}
+                    >
                         Already have an account? Login
                     </A>
                 ) : (
-                    <A path={`/${LocationEnum.registration}`}>
+                    <A
+                        size={'m'}
+                        path={`/${LocationEnum.registration}`}
+                    >
                         Do not have an account? Register
                     </A>
                 )}

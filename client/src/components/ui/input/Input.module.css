@@ -7,3 +7,27 @@
     min-width: 300px;
     max-width: 600px;
 }
+
+.black {
+    border: 2px solid black;
+}
+
+.softPink {
+    border: 2px solid var(--soft-pink-color);
+}
+
+.darkPink {
+    border: 2px solid var(--darkest-pink-color);
+}
+
+.small {
+    padding: 5px 5px;
+}
+
+.medium {
+    padding: 8px 10px;
+}
+
+.large {
+    padding: 12px 15px;
+}
