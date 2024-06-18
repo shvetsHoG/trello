@@ -1,0 +1,23 @@
+.wrapper {
+    background-color: var(--light-gray-color);
+    height: 100vh;
+    border-right: 2px solid var(--soft-blue-color);
+}
+
+.header {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    font-family: 'Lilita one', sans-serif;
+    color: var(--black-color);
+    font-size: 46px;
+    padding: 5px 25px;
+    border-bottom: 1px solid var(--soft-blue-color);
+}
+
+.itemsWrapper {
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

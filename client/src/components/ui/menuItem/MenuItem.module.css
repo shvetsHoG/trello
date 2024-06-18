@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.link {
+    color: var(--black-color);
+    font-size: 28px;
+    text-decoration: none;
+    font-family: 'Nunito sans', sans-serif;
+}
+
+.wrapper:hover>.link {
+    color: var(--soft-blue-color);
+}
+
+.wrapper:hover>.icon {
+    fill: var(--soft-blue-color);
+}
