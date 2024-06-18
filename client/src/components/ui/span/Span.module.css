@@ -26,3 +26,11 @@
 .large {
     font-size: 36px;
 }
+
+.white {
+    color: var(--white-color);
+}
+
+.black {
+    color: var(--black-color);
+}

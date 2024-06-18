@@ -3,7 +3,7 @@ import AuthPage from '../pages/authPage/AuthPage.tsx';
 import MainPage from '../pages/mainPage/MainPage.tsx';
 import { authService } from '../services/auth.service.ts';
 import { useEffect } from 'react';
-import NotAuthorized from '../pages/404/NotAuthorized.tsx';
+import NotAuthorized from '../pages/401/NotAuthorized.tsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuth } from '../store/reducers/AuthSlice.ts';
 import { IRootState } from '../store';

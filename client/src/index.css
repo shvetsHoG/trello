@@ -4,4 +4,13 @@
     --soft-pink-color: #b781cb;
     --darkest-pink-color: #543264;
     --dark-pink-color: #9f6ab3;
+    --soft-blue-color: #7681ba;
+    --gray-color: #808080;
+    --dark-gray-color: #232323;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+body {
+    background-color: white;
 }

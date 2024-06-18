@@ -6,9 +6,10 @@ interface SpanProps {
     children?: string;
     weight?: string;
     size?: string;
+    color?: string;
 }
 
-const Span: FC<SpanProps> = ({ weight, size, children }) => {
+const Span: FC<SpanProps> = ({ weight, size, color, children }) => {
     return (
         <span
             className={classNames(
@@ -22,6 +23,10 @@ const Span: FC<SpanProps> = ({ weight, size, children }) => {
                     [classes.small]: size === 's',
                     [classes.medium]: size === 'm',
                     [classes.large]: size === 'l'
+                },
+                {
+                    [classes.white]: color === 'white',
+                    [classes.black]: color === 'black'
                 }
             )}
         >
