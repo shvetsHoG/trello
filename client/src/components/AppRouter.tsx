@@ -9,6 +9,7 @@ import { setAuth } from '../store/reducers/AuthSlice.ts';
 import { IRootState } from '../store';
 import { setLoading } from '../store/reducers/LoadingSlice.ts';
 import Loader from './ui/loader/Loader.tsx';
+import NotFound from '../pages/404/NotFound.tsx';
 
 const AppRouter = () => {
     const isAuth = useSelector<IRootState>(state => state.auth.isAuth);
@@ -39,6 +40,10 @@ const AppRouter = () => {
                 <Routes>
                     <Route
                         path={'*'}
+                        element={<NotFound />}
+                    ></Route>
+                    <Route
+                        path={'/'}
                         element={<MainPage />}
                     />
                     <Route

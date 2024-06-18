@@ -8,4 +8,26 @@
     border-radius: 8px;
     min-width: 300px;
     max-width: 300px;
+    cursor: pointer;
+}
+
+.block:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+    background-color: var(--light-gray-color);
+    box-shadow: 2px 4px 8px var(--black-color);
+}
+
+.inherit {
+    background-color: var(--gray-color);
+}
+
+.pink {
+    background-color: var(--white-color);
+    border: 2px solid var(--dark-pink-color);
+}
+
+.black {
+    background-color: var(--white-color);
+    border: 2px solid var(--black-color);
 }

@@ -6,46 +6,47 @@ import Block from '../ui/block/Block.tsx';
 const Statistics = () => {
     const { data, isLoading } = useProfile();
 
-    console.log(data, isLoading);
-
     return (
-        <>
+        <div className={classes.wrapper}>
             {isLoading ? (
                 <Loader />
             ) : (
-                <div className={classes.wrapper}>
-                    <div className={classes.content}>
-                        {data?.statistics.length ? (
-                            data?.statistics.map(stat => (
-                                <Block
-                                    label={stat.label || 'label'}
-                                    value={stat.value || '0'}
-                                />
-                            ))
-                        ) : (
-                            <>
-                                <Block
-                                    label='Statistics not found'
-                                    value='0'
-                                />
-                                <Block
-                                    label='Statistics not found'
-                                    value='0'
-                                />
-                                <Block
-                                    label='Statistics not found'
-                                    value='0'
-                                />
-                                <Block
-                                    label='Statistics not found'
-                                    value='0'
-                                />
-                            </>
-                        )}
-                    </div>
+                <div className={classes.content}>
+                    {data?.statistics.length ? (
+                        data?.statistics.map(stat => (
+                            <Block
+                                color={'black'}
+                                label={stat.label || 'label'}
+                                value={stat.value || '0'}
+                            />
+                        ))
+                    ) : (
+                        <>
+                            <Block
+                                color={'black'}
+                                label='Statistics not found'
+                                value='0'
+                            />
+                            <Block
+                                color={'black'}
+                                label='Statistics not found'
+                                value='0'
+                            />
+                            <Block
+                                color={'black'}
+                                label='Statistics not found'
+                                value='0'
+                            />
+                            <Block
+                                color={'black'}
+                                label='Statistics not found'
+                                value='0'
+                            />
+                        </>
+                    )}
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

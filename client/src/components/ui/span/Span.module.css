@@ -34,3 +34,7 @@
 .black {
     color: var(--black-color);
 }
+
+.pink {
+    color: var(--soft-pink-color);
+}

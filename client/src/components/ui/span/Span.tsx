@@ -26,7 +26,8 @@ const Span: FC<SpanProps> = ({ weight, size, color, children }) => {
                 },
                 {
                     [classes.white]: color === 'white',
-                    [classes.black]: color === 'black'
+                    [classes.black]: color === 'black',
+                    [classes.pink]: color === 'pink'
                 }
             )}
         >
