@@ -1,3 +1,9 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .input {
     padding: 5px 5px;
     border-radius: 4px;

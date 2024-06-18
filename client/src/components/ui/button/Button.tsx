@@ -5,9 +5,10 @@ interface ButtonProps {
     children?: string;
     size?: string;
     type?: string;
+    disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ children, size, type }) => {
+const Button: FC<ButtonProps> = ({ children, size, type, ...props }) => {
     return (
         <button
             className={classNames(
@@ -23,6 +24,7 @@ const Button: FC<ButtonProps> = ({ children, size, type }) => {
                     [classes.filled]: type === 'filled'
                 }
             )}
+            {...props}
         >
             {children}
         </button>

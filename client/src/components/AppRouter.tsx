@@ -10,6 +10,7 @@ import { IRootState } from '../store';
 import { setLoading } from '../store/reducers/LoadingSlice.ts';
 import Loader from './ui/loader/Loader.tsx';
 import NotFound from '../pages/404/NotFound.tsx';
+import SettingsPage from '../pages/settingsPage/SettingsPage.tsx';
 
 const AppRouter = () => {
     const isAuth = useSelector<IRootState>(state => state.auth.isAuth);
@@ -39,12 +40,12 @@ const AppRouter = () => {
             ) : isAuth ? (
                 <Routes>
                     <Route
-                        path={'*'}
-                        element={<NotFound />}
-                    ></Route>
-                    <Route
                         path={'/'}
                         element={<MainPage />}
+                    />
+                    <Route
+                        path={'/settings'}
+                        element={<SettingsPage />}
                     />
                     <Route
                         path={'/registration'}
@@ -54,6 +55,10 @@ const AppRouter = () => {
                         path={'/login'}
                         element={<AuthPage />}
                     />
+                    <Route
+                        path={'*'}
+                        element={<NotFound />}
+                    ></Route>
                 </Routes>
             ) : (
                 <Routes>

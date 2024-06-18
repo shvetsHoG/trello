@@ -10,7 +10,7 @@
     font-family: 'Ubuntu Sans', sans-serif;
     color: var(--soft-pink-color);
     background: #fff;
-    max-width: 400px;
+    max-width: 200px;
 }
 
 .btn:hover {

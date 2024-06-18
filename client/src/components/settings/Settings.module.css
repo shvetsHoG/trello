@@ -2,11 +2,14 @@
     position: relative;
     width: 100%;
     padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
 }
 
 .content {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     gap: 25px;
     flex-wrap: wrap;
 }

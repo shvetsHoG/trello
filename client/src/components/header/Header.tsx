@@ -1,7 +1,7 @@
 import classes from './Header.module.css';
 import { FC } from 'react';
 import classNames from 'classnames';
-import useProfile from '../../hooks/UseProfile.tsx';
+import useProfile from '../../hooks/useProfile.tsx';
 import { LogOut } from 'lucide-react';
 import { authService } from '../../services/auth.service.ts';
 import { useDispatch } from 'react-redux';

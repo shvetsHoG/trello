@@ -1,5 +1,5 @@
 import classes from './Statistics.module.css';
-import useProfile from '../../hooks/UseProfile.tsx';
+import useProfile from '../../hooks/useProfile.tsx';
 import Loader from '../ui/loader/Loader.tsx';
 import Block from '../ui/block/Block.tsx';
 

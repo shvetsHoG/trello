@@ -2,13 +2,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { IAuthForm } from '../../types/user.types.ts';
 import { authService } from '../../services/auth.service.ts';
-import { toast } from 'sonner';
+import { toast, Toaster } from 'sonner';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Input from '../../components/ui/input/Input.tsx';
 import Button from '../../components/ui/button/Button.tsx';
 import A from '../../components/ui/link/A.tsx';
 import classes from './AuthPage.module.css';
-import Span from '../../components/ui/span/Span.tsx';
 import { setAuth } from '../../store/reducers/AuthSlice.ts';
 import { useDispatch } from 'react-redux';
 
@@ -38,10 +37,14 @@ const AuthPage = () => {
                 data
             ),
         onSuccess() {
-            toast.success('Успешный вход в систему');
+            toast.success('Success auth');
             dispatch(setAuth(true));
             reset();
             navigate('/');
+        },
+        onError() {
+            toast.error('Wrong password or email');
+            reset();
         }
     });
 
@@ -56,26 +59,16 @@ const AuthPage = () => {
                 className={classes.form}
             >
                 <div className={classes.inputWrapper}>
-                    <Span
-                        weight={'inherit'}
-                        size={'m'}
-                    >
-                        Email:
-                    </Span>
                     <Input
                         type='text'
                         size={'m'}
+                        label={'Email:'}
                         {...register('email')}
                     />
-                    <Span
-                        weight={'inherit'}
-                        size={'m'}
-                    >
-                        Password:
-                    </Span>
                     <Input
                         type='password'
                         size={'m'}
+                        label={'Password:'}
                         {...register('password')}
                     />
                 </div>
@@ -105,6 +98,10 @@ const AuthPage = () => {
                     </A>
                 )}
             </form>
+            <Toaster
+                richColors
+                position='top-center'
+            />
         </div>
     );
 };
