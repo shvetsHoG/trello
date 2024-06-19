@@ -1,21 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
 import { TaskService } from '../services/task.service.ts';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setTasks } from '../store/reducers/TasksSlice.ts';
+import { useEffect, useState } from 'react';
+import { ITaskResponse } from '../types/task.types.ts';
 
 const useTasks = () => {
-    const dispatch = useDispatch();
-
-    const { data, isPending } = useQuery({
+    const { data } = useQuery({
         queryKey: ['tasks'],
         queryFn: () => TaskService.getTasks()
     });
 
+    const [items, setItems] = useState<ITaskResponse[] | undefined>(data?.data);
+
     useEffect(() => {
-        dispatch(setTasks(data?.data));
+        setItems(data?.data);
     }, [data?.data]);
 
-    return { data, isPending };
+    return { items, setItems };
 };
 export default useTasks;

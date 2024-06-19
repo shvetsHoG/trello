@@ -10,7 +10,7 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-    tasks: undefined
+    tasks: []
 };
 
 const TasksSlice = createSlice({

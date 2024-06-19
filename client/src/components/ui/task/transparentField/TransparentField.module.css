@@ -1,0 +1,9 @@
+.wrapper {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.wrapper:focus {
+    outline: none;
+}

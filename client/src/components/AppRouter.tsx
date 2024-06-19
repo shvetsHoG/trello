@@ -11,6 +11,7 @@ import { setLoading } from '../store/reducers/LoadingSlice.ts';
 import Loader from './ui/loader/Loader.tsx';
 import NotFound from '../pages/404/NotFound.tsx';
 import SettingsPage from '../pages/settingsPage/SettingsPage.tsx';
+import TasksPage from '../pages/tasksPage/TasksPage.tsx';
 
 const AppRouter = () => {
     const isAuth = useSelector<IRootState>(state => state.auth.isAuth);
@@ -47,6 +48,10 @@ const AppRouter = () => {
                         path={'/settings'}
                         element={<SettingsPage />}
                     />
+                    <Route
+                        path={'/tasks'}
+                        element={<TasksPage />}
+                    ></Route>
                     <Route
                         path={'/registration'}
                         element={<AuthPage />}

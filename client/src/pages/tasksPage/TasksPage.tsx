@@ -4,7 +4,7 @@ import TasksView from '../../components/tasks/TasksView.tsx';
 const TasksPage = () => {
     return (
         <>
-            <PageWrapper title={'Settings'}>
+            <PageWrapper title={'Tasks'}>
                 <TasksView />
             </PageWrapper>
         </>
