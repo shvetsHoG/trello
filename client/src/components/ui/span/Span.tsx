@@ -7,9 +7,26 @@ interface SpanProps {
     weight?: string;
     size?: string;
     color?: string;
+    style?: IStyle;
+    chosen?: boolean;
+    onClick?: (e: never) => void;
+    id?: string;
 }
 
-const Span: FC<SpanProps> = ({ weight, size, color, children }) => {
+interface IStyle {
+    cursor?: string;
+}
+
+const Span: FC<SpanProps> = ({
+    weight,
+    size,
+    color,
+    chosen,
+    children,
+    style,
+    onClick,
+    id
+}) => {
     return (
         <span
             className={classNames(
@@ -28,8 +45,15 @@ const Span: FC<SpanProps> = ({ weight, size, color, children }) => {
                     [classes.white]: color === 'white',
                     [classes.black]: color === 'black',
                     [classes.pink]: color === 'pink'
+                },
+                {
+                    [classes.chosen]: chosen === true,
+                    [classes.unchosen]: chosen === false
                 }
             )}
+            style={style}
+            onClick={onClick}
+            id={id}
         >
             {children}
         </span>

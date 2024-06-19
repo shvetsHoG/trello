@@ -38,3 +38,11 @@
 .pink {
     color: var(--soft-pink-color);
 }
+
+.chosen {
+    color: var(--soft-blue-color);
+}
+
+.unchosen {
+    color: var(--black-color)
+}

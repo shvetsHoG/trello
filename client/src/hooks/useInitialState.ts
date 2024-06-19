@@ -1,4 +1,4 @@
-import useProfile from './useProfile.tsx';
+import useProfile from './useProfile.ts';
 import { useEffect } from 'react';
 import { UseFormReset } from 'react-hook-form';
 import { TypeUserForm } from '../types/user.types.ts';

@@ -16,6 +16,7 @@ const Sidebar = () => {
             <div className={classes.itemsWrapper}>
                 {Menu.map(item => (
                     <MenuItem
+                        key={item.link}
                         link={item.link}
                         name={item.name}
                         icon={item.icon}
