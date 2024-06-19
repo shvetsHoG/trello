@@ -1,0 +1,31 @@
+.exit {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    color: var(--white-color);
+    cursor: pointer;
+    padding: 5px;
+    background-color: var(--soft-blue-color);
+    border: transparent;
+    border-radius: 4px;
+}
+
+.btnWrapper {
+    min-width: 200px;
+    position: absolute;
+    display: flex;
+    z-index: 10;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+    padding: 15px 25px;
+    background-color: var(--dark-gray-color);
+    border-radius: 8px;
+    opacity: 0.95;
+}

@@ -6,6 +6,7 @@ import ListRow from '../listRow/ListRow.tsx';
 import { FILTERS } from '../../../tasks/columns.data.ts';
 import { filterTask } from '../../../tasks/list/filter-tasks.ts';
 import ListAddRowInput from '../listAddRowInput/ListAddRowInput.tsx';
+import Span from '../../span/Span.tsx';
 
 interface IListRowParent {
     value: string;
@@ -26,9 +27,15 @@ const ListRowParent: FC<IListRowParent> = ({
                 <div
                     ref={provided.innerRef}
                     {...provided.droppableProps}
+                    className={classes.wrapper}
                 >
-                    <div className={classes.colHeading}>
-                        <div>{label}</div>
+                    <div>
+                        <Span
+                            weight={'bold'}
+                            size={'m'}
+                        >
+                            {label}
+                        </Span>
                     </div>
                     {filterTask(items, value)?.map((item, index) => (
                         <Draggable

@@ -40,25 +40,23 @@ const ListRow: FC<IListRow> = ({ item, setItems }) => {
                 [classes.completed]: watch('isCompleted')
             })}
         >
-            <div>
-                <span>
-                    <button>
-                        <GripVertical />
-                    </button>
-                    <Controller
-                        control={control}
-                        name={'isCompleted'}
-                        render={({ field: { value, onChange } }) => (
-                            <Checkbox
-                                onChange={onChange}
-                                checked={value}
-                            />
-                        )}
-                    />
-                    <TransparentField {...register('name')} />
-                </span>
+            <div className={classes.first}>
+                <button className={classes.dragBtn}>
+                    <GripVertical />
+                </button>
+                <Controller
+                    control={control}
+                    name={'isCompleted'}
+                    render={({ field: { value, onChange } }) => (
+                        <Checkbox
+                            onChange={onChange}
+                            checked={value}
+                        />
+                    )}
+                />
+                <TransparentField {...register('name')} />
             </div>
-            <div>
+            <div className={classes.second}>
                 <Controller
                     control={control}
                     name={'createdAt'}
@@ -70,7 +68,7 @@ const ListRow: FC<IListRow> = ({ item, setItems }) => {
                     )}
                 />
             </div>
-            <div>
+            <div className={classes.third}>
                 <Controller
                     control={control}
                     name={'priority'}
@@ -86,13 +84,14 @@ const ListRow: FC<IListRow> = ({ item, setItems }) => {
                     )}
                 />
             </div>
-            <div>
+            <div className={classes.last}>
                 <button
                     onClick={() =>
                         item.id
                             ? deleteTask(item.id)
                             : setItems(prev => prev?.slice(0, -1))
                     }
+                    className={classes.deleteBtn}
                 >
                     {isDeletePending ? <Loader /> : <Trash2 />}
                 </button>

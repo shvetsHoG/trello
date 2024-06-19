@@ -8,12 +8,15 @@ interface CheckboxProps {
 
 const Checkbox: FC<CheckboxProps> = ({ onChange, checked }) => {
     return (
-        <input
-            type={'checkbox'}
-            className={classes.box}
-            onChange={onChange}
-            checked={checked}
-        ></input>
+        <div className={classes.box}>
+            <input
+                type={'checkbox'}
+                className={classes.box}
+                content={''}
+                onChange={onChange}
+                checked={checked}
+            ></input>
+        </div>
     );
 };
 

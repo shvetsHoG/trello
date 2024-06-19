@@ -5,6 +5,7 @@ import { FC, useState } from 'react';
 import { DayPicker, SelectSingleEventHandler } from 'react-day-picker';
 import Exit from '../../exit/Exit.tsx';
 import { useOutside } from '../../../../hooks/useOutside.ts';
+import 'react-day-picker/dist/style.css';
 
 dayjs.extend(localizedFormat);
 
@@ -35,17 +36,24 @@ const DatePicker: FC<IDatePicker> = ({ onChange, value }) => {
             className={classes.wrapper}
             ref={ref}
         >
-            <button onClick={() => setIsShow(!isShow)}>
+            <button
+                onClick={() => setIsShow(!isShow)}
+                className={classes.date}
+            >
                 {value ? dayjs(value).format('LL') : 'Click for select'}
             </button>
             {value && (
-                <button onClick={() => onChange('')}>
-                    <Exit size={14} />
+                <button
+                    onClick={() => onChange('')}
+                    className={classes.exit}
+                >
+                    <Exit size={18} />
                 </button>
             )}
             {isShow && (
-                <div>
+                <div className={classes.dpWrapper}>
                     <DayPicker
+                        className={classes.rdp}
                         fromYear={2024}
                         toYear={2054}
                         initialFocus={isShow}

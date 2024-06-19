@@ -12,6 +12,17 @@
     --black-color: #000000;
 }
 
+.rdp {
+    --rdp-background-color: var(--gray-color);
+    --rdp-accent-color: var(--light-gray-color);
+    --rdp-selected-color: var(--black-color)
+}
+
 body {
+    height: 100vh;
     background-color: white;
+}
+
+#root {
+    height: 100%;
 }

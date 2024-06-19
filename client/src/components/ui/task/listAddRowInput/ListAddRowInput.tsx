@@ -1,6 +1,7 @@
 import classes from './ListAddRowInput.module.css';
 import { Dispatch, FC, SetStateAction } from 'react';
 import { ITaskResponse } from '../../../../types/task.types.ts';
+import Button from '../../button/Button.tsx';
 
 interface IListAddRowInput {
     filterDate?: string;
@@ -21,7 +22,12 @@ const ListAddRowInput: FC<IListAddRowInput> = ({ filterDate, setItems }) => {
 
     return (
         <div className={classes.wrapper}>
-            <button onClick={addRow}>Add task...</button>
+            <Button
+                type={'black'}
+                onClick={addRow}
+            >
+                Add task
+            </Button>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 .wrapper {
     background-color: var(--light-gray-color);
-    height: 100vh;
+    height: 100%;
     border-right: 2px solid var(--soft-blue-color);
 }
 

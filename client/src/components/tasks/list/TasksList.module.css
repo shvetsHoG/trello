@@ -1,0 +1,26 @@
+.wrapper {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 12fr 5fr 5fr 2fr;
+    border-bottom: 2px solid var(--gray-color);
+    border-top: 2px solid var(--gray-color);
+}
+
+.name {
+    border-right: 2px solid var(--gray-color);
+    padding: 5px;
+}
+
+.date {
+    border-right: 2px solid var(--gray-color);
+    padding: 5px;
+}
+
+.priority {
+    border-right: 2px solid var(--gray-color);
+    padding: 5px;
+}
+
+.trash {
+    padding: 5px;
+}

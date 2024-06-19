@@ -1,0 +1,48 @@
+.wrapper {
+    background-color: var(--light-gray-color);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 12fr 5fr 5fr 2fr;
+}
+
+.first {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    padding: 5px;
+    border-right: 2px solid var(--gray-color);
+}
+
+.dragBtn {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.second {
+    position: relative;
+    padding: 5px;
+    border-right: 2px solid var(--gray-color);
+    display: flex;
+    align-items: center;
+}
+
+.third {
+    position: relative;
+    padding: 5px;
+    border-right: 2px solid var(--gray-color);
+}
+
+.last {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.deleteBtn {
+    cursor: pointer;
+    border: none;
+    background: none;
+}

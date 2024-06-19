@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useOutside } from '../../../../hooks/useOutside.ts';
 import Span from '../../span/Span.tsx';
 import Exit from '../../exit/Exit.tsx';
+import classes from './SingleSelect.module.css';
 
 export interface IOption {
     label: string;
@@ -24,8 +25,9 @@ const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange }) => {
             <button
                 onClick={e => {
                     e.preventDefault();
-                    setIsShow(false);
+                    setIsShow(!isShow);
                 }}
+                className={classes.btn}
             >
                 {getValue() ? (
                     <Span>{getValue()}</Span>
@@ -38,13 +40,15 @@ const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange }) => {
                     onClick={e => {
                         e.preventDefault();
                         onChange('');
+                        console.log(isShow);
                     }}
+                    className={classes.exit}
                 >
-                    <Exit size={14} />
+                    <Exit size={18} />
                 </button>
             )}
             {isShow && (
-                <div>
+                <div className={classes.btnWrapper}>
                     {data.map(item => (
                         <button
                             key={item.value}
@@ -53,6 +57,7 @@ const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange }) => {
                                 onChange(item.value);
                                 setIsShow(false);
                             }}
+                            className={classes.btn}
                         >
                             <Span>{item.label}</Span>
                         </button>

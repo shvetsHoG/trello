@@ -2,6 +2,9 @@
     background-color: transparent;
     border: none;
     outline: none;
+    font-size: 24px;
+    font-family: 'Abel', sans-serif;
+    width: 90%;
 }
 
 .wrapper:focus {

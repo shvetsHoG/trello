@@ -1,3 +1,27 @@
-.wrapper {
+.dpWrapper {
+    position: absolute;
+    right: -10px;
+    background: rgba(0, 0, 0, .9);
+    z-index: 10;
+    border-radius: 8px;
+    color: var(--white-color);
+    font-size: 20px;
+    font-family: 'Abel', sans-serif;
+}
 
+.exit {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.date {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: "Nunito sans", sans-serif;
+    font-size: 24px;
 }
