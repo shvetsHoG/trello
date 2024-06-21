@@ -1,9 +1,11 @@
 .wrapper {
+    position: relative;
     padding: 3px;
     background-color: var(--light-gray-color);
     border-radius: 4px;
-    display: grid;
-    grid-template-columns: 12fr 5fr 5fr 2fr;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
 }
 
 .first {
@@ -11,10 +13,12 @@
     gap: 2px;
     align-items: center;
     padding: 5px;
-    border-right: 2px dashed var(--black-color);
 }
 
 .dragBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     padding: 0;
     margin: 0;
     background: none;
@@ -25,7 +29,6 @@
 .second {
     position: relative;
     padding: 5px;
-    border-right: 2px dashed var(--black-color);
     display: flex;
     align-items: center;
 }
@@ -33,7 +36,6 @@
 .third {
     position: relative;
     padding: 5px;
-    border-right: 2px dashed var(--black-color);
 }
 
 .last {
@@ -43,6 +45,9 @@
 }
 
 .deleteBtn {
+    position: absolute;
+    bottom: 5px;
+    right: 2px;
     cursor: pointer;
     border: none;
     background: none;

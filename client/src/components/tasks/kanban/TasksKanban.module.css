@@ -1,0 +1,7 @@
+.parentsWrapper {
+    margin-top: 5px;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 25px;
+    overflow-y: inherit;
+}

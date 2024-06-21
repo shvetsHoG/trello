@@ -21,7 +21,10 @@ const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange }) => {
     const getValue = () => data.find(item => item.value === value)?.value;
 
     return (
-        <div ref={ref}>
+        <div
+            ref={ref}
+            className={classes.wrapper}
+        >
             <button
                 onClick={e => {
                     e.preventDefault();

@@ -1,12 +1,12 @@
-import classes from './ListRowParents.module.css';
+import classes from './KanbanColumnParents.module.css';
 import { ITaskResponse } from '../../../../types/task.types.ts';
 import { Dispatch, FC, SetStateAction } from 'react';
 import { Draggable, Droppable } from '@hello-pangea/dnd';
-import ListRow from '../listRow/ListRow.tsx';
 import { FILTERS } from '../../../tasks/columns.data.ts';
 import { filterTask } from '../../../tasks/filter-tasks.ts';
 import ListAddRowInput from '../listAddRowInput/ListAddRowInput.tsx';
 import Span from '../../span/Span.tsx';
+import KanbanColumn from '../kanbanColumn/KanbanColumn.tsx';
 
 interface IListRowParent {
     value: string;
@@ -15,7 +15,7 @@ interface IListRowParent {
     setItems: Dispatch<SetStateAction<ITaskResponse[] | undefined>>;
 }
 
-const ListRowParent: FC<IListRowParent> = ({
+const KanbanColumnParent: FC<IListRowParent> = ({
     setItems,
     items,
     value,
@@ -49,11 +49,11 @@ const ListRowParent: FC<IListRowParent> = ({
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
                                 >
-                                    <ListRow
+                                    <KanbanColumn
                                         key={item.id}
                                         item={item}
                                         setItems={setItems}
-                                    ></ListRow>
+                                    ></KanbanColumn>
                                 </div>
                             )}
                         </Draggable>
@@ -76,4 +76,4 @@ const ListRowParent: FC<IListRowParent> = ({
     );
 };
 
-export default ListRowParent;
+export default KanbanColumnParent;
