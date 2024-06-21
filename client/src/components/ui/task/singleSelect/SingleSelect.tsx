@@ -3,6 +3,7 @@ import { useOutside } from '../../../../hooks/useOutside.ts';
 import Span from '../../span/Span.tsx';
 import Exit from '../../exit/Exit.tsx';
 import classes from './SingleSelect.module.css';
+import classNames from 'classnames';
 
 export interface IOption {
     label: string;
@@ -14,9 +15,10 @@ interface ISingleSelect {
     onChange: (value: string) => void;
     value: string;
     isColorSelected?: boolean;
+    kanban?: boolean;
 }
 
-const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange }) => {
+const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange, kanban }) => {
     const { ref, isShow, setIsShow } = useOutside(false);
     const getValue = () => data.find(item => item.value === value)?.value;
 
@@ -51,7 +53,11 @@ const SingleSelect: FC<ISingleSelect> = ({ data, value, onChange }) => {
                 </button>
             )}
             {isShow && (
-                <div className={classes.btnWrapper}>
+                <div
+                    className={classNames(classes.btnWrapper, {
+                        [classes.right]: kanban === true
+                    })}
+                >
                     {data.map(item => (
                         <button
                             key={item.value}

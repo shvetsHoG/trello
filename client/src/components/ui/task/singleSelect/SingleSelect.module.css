@@ -29,3 +29,8 @@
     border-radius: 8px;
     opacity: 0.95;
 }
+
+.right {
+    right: -260px;
+    bottom: -15px;
+}

@@ -80,6 +80,7 @@ const KanbanColumn: FC<IListRow> = ({ item, setItems }) => {
                             }))}
                             onChange={onChange}
                             value={value || ''}
+                            kanban={true}
                         />
                     )}
                 />
