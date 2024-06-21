@@ -5,7 +5,6 @@
     background-color: var(--light-gray-color);
     height: 100%;
     border-right: 2px solid var(--soft-blue-color);
-    min-width: 300px;
 }
 
 .header {
